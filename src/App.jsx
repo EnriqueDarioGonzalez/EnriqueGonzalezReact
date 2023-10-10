@@ -1,11 +1,9 @@
 import React from 'react';
 import NavBar from './Components/Layout/NavBar';
 import Footer from './Components/Layout/Footer';
-import Articulos from './Components/ItemList/ItemList';
 import ContactForm from './pages/contact';
 import Nosotros from './pages/nosotros';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Detail from './Components/ItemDetail/ItemDetail';
 import Cart from './pages/cart'
 import ItemListContainer from './Components/containers/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
