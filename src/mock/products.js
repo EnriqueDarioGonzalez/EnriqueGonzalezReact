@@ -81,4 +81,25 @@ const Products = [
       },
     ];
 
+    export const getProducts = () => {
+      return new Promise((resolve, reject)=>{
+        let error = false
+        setTimeout(()=>{
+          if(error){
+            reject('no hay data, intente mas tarde')
+          }else{
+            resolve(Products)
+          }
+        },2000)
+      })
+    }
+
+  export const getItem = (id) => {
+    return new Promise ((resolve)=>{
+      setTimeout(()=>{
+        resolve(Products.find((products)=> products.id == id))
+      },2000)
+    })
+  }
+
   export default Products;

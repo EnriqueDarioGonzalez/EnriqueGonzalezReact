@@ -2,12 +2,12 @@ import {Card , Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
-const Productos = ({ id , nombre, precio, descripcion, categoria, onClick, thumbnail , style}) => {
+const Item = ({ id , nombre, precio, descripcion, categoria, thumbnail, style }) => {
     return (
         <Card className="mb-4">
         <Card.Img variant="top" src={thumbnail} style={style.thumbnail}/>
         <Card.Body>
-          <Card.Title>Articulo</Card.Title>
+          <Card.Title></Card.Title>
           <Card.Text>
             <ul>
                 <li>ID: {id}</li>
@@ -17,10 +17,10 @@ const Productos = ({ id , nombre, precio, descripcion, categoria, onClick, thumb
                 <li>Categoria: {categoria}</li>
             </ul>
           </Card.Text>
-          <Link to={`/products/${nombre}`} className="btn btn-primary">Abrir </Link>
+          <Link to={`/articulo/${id}`} className="btn btn-primary">Info</Link>
         </Card.Body>
       </Card>
     );
 };
 
-export default Productos;
+export default Item;

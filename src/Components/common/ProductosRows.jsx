@@ -1,4 +1,4 @@
-import Productos from "./Products";
+import Productos from "../Item/Item";
 import { Col , Row} from "react-bootstrap";
 
 const ProductosGrid = ({ items }) => {
@@ -9,7 +9,6 @@ const ProductosGrid = ({ items }) => {
             return (
               <Col md={3}>
               <Productos
-              key={item.id}
               id={item.id}
               nombre={item.nombre}
               precio={item.precio}

@@ -1,20 +1,21 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Card , Button, Container} from "react-bootstrap";
-import Products from "../data/products";
+import ItemCount from "../ItemCount/ItemCount";
 
 
-const Detail = () => {
-    const { nombre } = useParams();
-    const products = Products.find(i => i.nombre === nombre)
-    const navigate = useNavigate();
+const Detail = ({products}) => {
+    const onAdd = (cantidad) => {
+        console.log(`Compraste ${cantidad} productos`)
+    }
+     const navigate = useNavigate();
     return (
         <Container>
-        <h1>Detalles de {nombre}</h1>
+        <h1>Detalles de {products.nombre}</h1>
         <Card>
-      <Card.Img variant="top" src={products.thumbnail} />
+      <Card.Img variant="top" src={products.thumbnail}/>
       <Card.Body>
         <Card.Title>
-            {products.name}
+            {products.nombre}
         </Card.Title>
         <Card.Text>
             <ul>
@@ -25,6 +26,7 @@ const Detail = () => {
                 <li>Categoria: {products.categoria}</li>
             </ul>
         </Card.Text>
+        <ItemCount initial={1} stock={10} onAdd={onAdd} />
         <Button variant="primary" onClick={() => navigate (-1)}> Volver </Button>
       </Card.Body>
     </Card>
