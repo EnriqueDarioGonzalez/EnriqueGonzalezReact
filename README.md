@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Explicación del Proyecto
+
+En este proyecto, fui creciendo a lo largo de las clases y agregando todo lo dado. De una manera bastante simple, pero utilizable, porque no pensaba usar el proyecto en un futuro.
+
+Agregado Sistema navegación entre las rutas dinamico
+Agregado filtro de categoria
+Agregado detalles del producto
+Agregado Carrito
+Agregado Compra
+
+
