@@ -18,21 +18,22 @@ const Detail = ({products}) => {
         <Container>
         <h1>Detalles de {products.nombre}</h1>
         <Card>
-      <img src={products.thumbnail} width={'250rem'}/>
+      <img src={products.thumbnail} width={'250rem'} alt="imagen"/>
       <Card.Body>
         <Card.Title>
             {products.nombre}
         </Card.Title>
         <Card>
             <ul>
-                <li>ID: {products.id}</li>
+                {/* <li>ID: {products.id}</li> */}
                 <li>Nombre: {products.nombre}</li>
                 <li>Precio: {products.precio}</li>
                 <li>Descripcion: {products.descripcion}</li>
                 <li>Categoria: {products.categoria}</li>
+                <li>Stock: {products.stock}</li>
             </ul>
         </Card>
-        { quantityAdded === '' ? <ItemCount initial={1} stock={10} onAdd={onAdd} />
+        { quantityAdded === '' ? <ItemCount initial={1} stock={products.stock} onAdd={onAdd} />
         : <Link to='/cart' className="btn btn-dark">Llevar al Carrito</Link> }
         <Button variant="primary" className="btn btn-dark" onClick={() => navigate (-1)}> Volver </Button>
       </Card.Body>

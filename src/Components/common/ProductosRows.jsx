@@ -17,6 +17,7 @@ const ProductosGrid = ({ items }) => {
               categoria={item.categoria}
               onClick={item.onClick}
               style={item.style}
+              stock={item.stock}
               key={item.id}
               />
               </Col>

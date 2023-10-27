@@ -10,7 +10,7 @@ const Item = ({ id , nombre, precio, descripcion, categoria, thumbnail, style })
           <Card.Title></Card.Title>
           <Card>
             <ul>
-                <li>ID: {id}</li>
+                {/* <li>ID: {id}</li> */}
                 <li>Nombre: {nombre}</li>
                 <li>Precio: {precio}</li>
                 <li>Descripcion: {descripcion}</li>
