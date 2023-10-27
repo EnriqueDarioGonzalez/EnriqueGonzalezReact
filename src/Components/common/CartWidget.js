@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BiCart } from 'react-icons/bi';
+import { CartContext } from '../../context/CartContext';
 
 const CartWidget = () => {
+  const {cartQuantity} = useContext(CartContext)
   return (
     <div className='border-box'><div className="cart-widget" >
-      <BiCart size={24} />
+      <BiCart size={24} color='black'/>
     </div>
-    <span className="badge text-bg-secondary">5</span>
+    {cartQuantity() > 0 && <span className="badge text-bg-secondary">{cartQuantity()}</span>}
     </div>
   );
 };

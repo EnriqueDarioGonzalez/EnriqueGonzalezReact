@@ -1,23 +1,29 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Card , Button, Container} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
+import { useState , useContext} from "react";
+import { CartContext } from "../../context/CartContext";
 
 
 const Detail = ({products}) => {
+    const [quantityAdded, setQuantityAdded] = useState('')
+    const {addItem} = useContext(CartContext)
     const onAdd = (cantidad) => {
         console.log(`Compraste ${cantidad} productos`)
+        setQuantityAdded(cantidad)
+        addItem(products, cantidad)
     }
      const navigate = useNavigate();
     return (
         <Container>
         <h1>Detalles de {products.nombre}</h1>
         <Card>
-      <Card.Img variant="top" src={products.thumbnail}/>
+      <img src={products.thumbnail} width={'250rem'}/>
       <Card.Body>
         <Card.Title>
             {products.nombre}
         </Card.Title>
-        <Card.Text>
+        <Card>
             <ul>
                 <li>ID: {products.id}</li>
                 <li>Nombre: {products.nombre}</li>
@@ -25,9 +31,10 @@ const Detail = ({products}) => {
                 <li>Descripcion: {products.descripcion}</li>
                 <li>Categoria: {products.categoria}</li>
             </ul>
-        </Card.Text>
-        <ItemCount initial={1} stock={10} onAdd={onAdd} />
-        <Button variant="primary" onClick={() => navigate (-1)}> Volver </Button>
+        </Card>
+        { quantityAdded === '' ? <ItemCount initial={1} stock={10} onAdd={onAdd} />
+        : <Link to='/cart' className="btn btn-dark">Llevar al Carrito</Link> }
+        <Button variant="primary" className="btn btn-dark" onClick={() => navigate (-1)}> Volver </Button>
       </Card.Body>
     </Card>
         </Container>

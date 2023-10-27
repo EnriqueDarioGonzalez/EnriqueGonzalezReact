@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import Productos from "../Item/Item";
 
 const ItemCount = ({ stock , onAdd , initial }) => {
 
@@ -19,11 +18,11 @@ const ItemCount = ({ stock , onAdd , initial }) => {
     return (
         <div>
             <div>
-         <Button onClick={restar}>-</Button>
+         <Button className="btn btn-dark" onClick={restar}>-</Button>
          <span>{count}</span>
-         <Button onClick={sumar}>+</Button>
+         <Button className="btn btn-dark" onClick={sumar}>+</Button>
          </div>
-         <Button disabled={count === 0} onClick={()=>onAdd(count)}>Comprar</Button>
+         <Button className="btn btn-dark" disabled={count === 0} onClick={()=>onAdd(count) }>Comprar</Button>
         </div>
     )
 }

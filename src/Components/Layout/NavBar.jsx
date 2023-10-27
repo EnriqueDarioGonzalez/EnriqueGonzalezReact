@@ -26,12 +26,12 @@ const NavBar = () => {
             <NavLink className="nav-link" to="/nosotros">Nosotros</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/carrito">Carrito</NavLink>
+            <NavLink className="nav-link" to="/cart">Carrito</NavLink>
           </li>
         </ul>
       </div>
             <div>
-            <CartWidget />
+            <NavLink style={{textDecoration:'none'}} to='/cart'><CartWidget /></NavLink>
             </div>
     </nav>
   );

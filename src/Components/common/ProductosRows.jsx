@@ -6,7 +6,7 @@ const ProductosGrid = ({ items }) => {
   return(
     <Row>
       {items.map((item) => {
-            return (
+              return (
               <Col md={3}>
               <Productos
               id={item.id}
@@ -17,11 +17,13 @@ const ProductosGrid = ({ items }) => {
               categoria={item.categoria}
               onClick={item.onClick}
               style={item.style}
+              key={item.id}
               />
               </Col>
             );
           })}
     </Row>
+    
     );
 };
 
